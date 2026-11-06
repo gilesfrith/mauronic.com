@@ -8,49 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
   <style>
-    :root {
-      --bg: #0d0d0f;
-      --ink: #f5efe3;
-      --muted: #a69f92;
-      --gold: #d9b45a;
-      --red: #c8321e;
-      --orange: #e8701e;
-      --yellow: #f2b632;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { background: var(--bg); color: var(--ink); }
-    body {
-      min-height: 100vh;
-      font-family: "Inter", system-ui, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 48px 16px 32px;
-      text-align: center;
-    }
-    .stripes { width: min(520px, 100%); margin-bottom: 28px; }
-    .stripes span { display: block; height: 6px; margin-bottom: 4px; border-radius: 3px; }
-    .stripes span:nth-child(1) { background: var(--red); }
-    .stripes span:nth-child(2) { background: var(--orange); }
-    .stripes span:nth-child(3) { background: var(--yellow); }
-    .brand {
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    h1 {
-      font-family: "Anton", Impact, sans-serif;
-      font-weight: 400;
-      font-size: clamp(3rem, 12vw, 7rem);
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
     .photo {
       margin-top: 36px;
       width: min(420px, 100%);
@@ -60,16 +19,28 @@
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
     }
     .photo img { display: block; width: 100%; height: auto; }
-    footer { margin-top: auto; padding-top: 40px; color: var(--muted); font-size: 0.8rem; }
+    .cta {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #111;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .cta:hover { background: var(--yellow); }
   </style>
 </head>
 <body>
+  <nav class="nav"><a href="./" aria-current="page">Home</a><a href="dad-jokes/">Dad Jokes</a></nav>
   <div class="stripes" aria-hidden="true"><span></span><span></span><span></span></div>
   <p class="brand">Mauronic.com</p>
   <h1>Coming Soon</h1>
   <figure class="photo">
     <img src="img/tony-mauro.jpg" alt="Tony Mauro, arms crossed, standing in front of a black van" width="1200" height="1600">
   </figure>
+  <a class="cta" href="dad-jokes/">Meanwhile, enjoy some dad jokes →</a>
   <footer>&copy; <span id="y">2026</span> Mauronic</footer>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>

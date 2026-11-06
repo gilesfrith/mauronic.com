@@ -1,0 +1,62 @@
+:root {
+  --bg: #0d0d0f;
+  --ink: #f5efe3;
+  --muted: #a69f92;
+  --gold: #d9b45a;
+  --red: #c8321e;
+  --orange: #e8701e;
+  --yellow: #f2b632;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); }
+body {
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 32px;
+  text-align: center;
+}
+button { font: inherit; color: inherit; border: 0; }
+.nav {
+  width: min(1100px, 100%);
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current="page"] { color: var(--gold); border-bottom-color: var(--gold); }
+.stripes { width: min(520px, 100%); margin-bottom: 28px; }
+.stripes span { display: block; height: 6px; margin-bottom: 4px; border-radius: 3px; }
+.stripes span:nth-child(1) { background: var(--red); }
+.stripes span:nth-child(2) { background: var(--orange); }
+.stripes span:nth-child(3) { background: var(--yellow); }
+.brand {
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+h1 {
+  font-family: "Anton", Impact, sans-serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 12vw, 7rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+footer { margin-top: auto; padding-top: 40px; color: var(--muted); font-size: 0.8rem; }
