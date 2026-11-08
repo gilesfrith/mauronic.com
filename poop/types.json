@@ -1,0 +1,162 @@
+[
+  {
+    "id": "01-precious-peas",
+    "name": "Precious Peas",
+    "category": "Pellets",
+    "bristol": "1",
+    "summary": "Hard little spheres that arrive separately and refuse to be introduced.",
+    "note": "Dry, round, and strangely polite. They bounce off each other in the bowl like they have dinner plans."
+  },
+  {
+    "id": "02-pebble-beach",
+    "name": "Pebble Beach",
+    "category": "Pellets",
+    "bristol": "1",
+    "summary": "A whole shoreline, built slowly and without water.",
+    "note": "Not one stone. A weekend's worth. Every pebble has a crack in it and an alibi."
+  },
+  {
+    "id": "03-porcupine",
+    "name": "The Porcupine",
+    "category": "Pellets",
+    "bristol": "1",
+    "summary": "Precious peas that grew spines on the way out.",
+    "note": "Same family as the peas. Worse exit interview. You will remember the shape longer than the name."
+  },
+  {
+    "id": "04-cracked-pavement",
+    "name": "Cracked Pavement",
+    "category": "Logs",
+    "bristol": "2",
+    "summary": "A log that dried in the sun before it ever saw the sun.",
+    "note": "Sausage-shaped, lumpy, and split into plates. One more glass of water and this would have been a different animal."
+  },
+  {
+    "id": "05-corkscrew",
+    "name": "The Corkscrew",
+    "category": "Logs",
+    "bristol": "3",
+    "summary": "Someone threaded it on a lathe.",
+    "note": "A continuous ridge runs the length of it. Cracks on the high points. It looks engineered, which is not a comfort."
+  },
+  {
+    "id": "06-trophy-log",
+    "name": "The Trophy Log",
+    "category": "Logs",
+    "bristol": "4",
+    "summary": "Smooth, complete, and it sank with dignity.",
+    "note": "The field guide's cover model. You look back. You are allowed to be proud. You should not text anyone."
+  },
+  {
+    "id": "07-snake-in-the-grass",
+    "name": "Snake in the Grass",
+    "category": "Logs",
+    "bristol": "4",
+    "summary": "Long, smooth, and coiled like it meant to stay.",
+    "note": "One piece, no cracks, a lazy S in the water. The composition is honestly pretty good."
+  },
+  {
+    "id": "08-birthday-candle",
+    "name": "The Birthday Candle",
+    "category": "Logs",
+    "bristol": "4",
+    "summary": "Narrow, upright, and waiting for a wish you will not make.",
+    "note": "Taller than it is wide, standing in the water on one end. Blow it out only in the metaphorical sense."
+  },
+  {
+    "id": "09-soft-serve",
+    "name": "Soft Serve",
+    "category": "Soft",
+    "bristol": "5",
+    "summary": "Soft blobs with edges, swirled to a peak that held.",
+    "note": "Clear-cut pieces, glossy, still a shape. It peaked. You may not photograph it. The field guide already did."
+  },
+  {
+    "id": "10-confetti",
+    "name": "Confetti",
+    "category": "Soft",
+    "bristol": "6",
+    "summary": "Fluffy ragged bits. A celebration nobody put on the calendar.",
+    "note": "Mushy edges, several pieces, no single hero. Flush twice. Then look anyway."
+  },
+  {
+    "id": "11-mudslide",
+    "name": "The Mudslide",
+    "category": "Liquids",
+    "bristol": "6",
+    "summary": "Not a squirt. A landslide with a schedule.",
+    "note": "Thick, slow, and it paints a stripe on the way down. The bowl learns the route."
+  },
+  {
+    "id": "12-hershey-squirts",
+    "name": "Hershey Squirts",
+    "category": "Liquids",
+    "bristol": "7",
+    "summary": "No warning, no structure, a chocolate emergency.",
+    "note": "Watery, sudden, and already on the underside of the seat in spirit if not in fact. Hydrate. Then apologize to the room."
+  },
+  {
+    "id": "13-oil-slick",
+    "name": "The Oil Slick",
+    "category": "Liquids",
+    "bristol": "7",
+    "summary": "A thin pool with a film that catches the bathroom light.",
+    "note": "Almost no body, just a greasy sheen. Do not light a match. Do not describe the colors out loud."
+  },
+  {
+    "id": "14-floaters",
+    "name": "The Unsinkable",
+    "category": "Phenomena",
+    "bristol": "4",
+    "summary": "It finished the job and then refused to leave.",
+    "note": "Buoyant. Smug. High in the water like a duck that knows your Wi-Fi password. The flush is a suggestion."
+  },
+  {
+    "id": "15-drowned-sub",
+    "name": "The Drowned Sub",
+    "category": "Phenomena",
+    "bristol": "2",
+    "summary": "Dense, dark, and gone before you stood up.",
+    "note": "It sank with purpose. You hear the tap on the porcelain. By the time you look, it has a new zip code."
+  },
+  {
+    "id": "16-ghost-poop",
+    "name": "Ghost Poop",
+    "category": "Phenomena",
+    "bristol": "—",
+    "summary": "You went. You wiped. Nothing was there.",
+    "note": "The paper came back clean. The water is unmarked. Something left, and it took the evidence with it. You do not trust this. You are right not to."
+  },
+  {
+    "id": "17-cling-on",
+    "name": "The Cling-On",
+    "category": "Hazards",
+    "bristol": "any",
+    "summary": "It met the bowl and signed a lease.",
+    "note": "Above the waterline. Unmoved by the first flush. The second flush is a negotiation. Bring a brush and a sense of proportion."
+  },
+  {
+    "id": "18-corn-curse",
+    "name": "The Corn Curse",
+    "category": "Artifacts",
+    "bristol": "any",
+    "summary": "Everything else was digested. The corn was not.",
+    "note": "Whole kernels, bright as they were on the plate, embedded like tiles. The corn attended. The corn will be in the sequel."
+  },
+  {
+    "id": "19-chocolate-thunder",
+    "name": "Chocolate Thunder",
+    "category": "Events",
+    "bristol": "6",
+    "summary": "You heard it before you finished sitting down.",
+    "note": "A single impact with a soundtrack. The room needs a minute. So do you. Open a window before you open the door."
+  },
+  {
+    "id": "20-aftershock",
+    "name": "The Aftershock",
+    "category": "Events",
+    "bristol": "any",
+    "summary": "You stood up. You sat back down. The meeting was not adjourned.",
+    "note": "The first one was a complete sentence. The second one was the footnote you had already walked away from. Wash your hands again."
+  }
+]

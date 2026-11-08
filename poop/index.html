@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poop — Mauronic</title>
+  <meta name="description" content="A field guide to twenty named poops, from Precious Peas to Ghost Poop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <style>
+    .intro { color: var(--muted); max-width: 540px; margin: 14px auto 0; line-height: 1.5; }
+    .cta {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #111;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .cta:hover { background: var(--yellow); }
+    .filters {
+      width: min(1100px, 100%);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .filters button {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1.5px solid transparent;
+      background: #17171b;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .filters button[aria-pressed="true"] {
+      color: #111;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .filters button:hover { color: var(--ink); }
+    .filters button[aria-pressed="true"]:hover { color: #111; }
+    .grid {
+      width: min(1100px, 100%);
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .specimen[hidden] { display: none; }
+    .specimen {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #17171b;
+      text-align: left;
+    }
+    .specimen img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #0d0d0f; }
+    .meta { padding: 16px 16px 18px; }
+    .num { font-family: "Anton", Impact, sans-serif; color: var(--gold); font-size: 0.95rem; letter-spacing: 0.08em; }
+    .cat { display: block; margin-top: 6px; color: var(--muted); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    h2 {
+      font-family: "Anton", Impact, sans-serif;
+      font-weight: 400;
+      font-size: 1.7rem;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-top: 6px;
+    }
+    .summary { margin-top: 8px; font-weight: 600; line-height: 1.35; }
+    .note { margin-top: 8px; color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+    .empty { margin-top: 28px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <nav class="nav"><a href="../">Home</a><a href="../dad-jokes/">Dad Jokes</a><a href="./" aria-current="page">Poop</a></nav>
+  <div class="stripes" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p class="brand">Mauronic.com</p>
+  <h1>Poop</h1>
+  <p class="intro">A field guide to the ones with names. Twenty types, sorted by how they arrived. If yours is missing, you can file it. Nothing you type will be sent anywhere.</p>
+  <a class="cta" href="register.html">Register a new type →</a>
+  <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+  <p class="empty" id="empty" hidden>Nothing in this category. Suspicious.</p>
+  <main class="grid" id="grid"></main>
+  <footer>&copy; <span id="y">2026</span> Mauronic</footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const grid = document.getElementById("grid");
+    const filters = document.getElementById("filters");
+    const empty = document.getElementById("empty");
+
+    function esc(s) {
+      const d = document.createElement("div");
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    function bristol(value) {
+      if (value === "—" || value === "any") return "Bristol " + value;
+      return "Bristol " + value;
+    }
+
+    function applyFilter(category) {
+      let shown = 0;
+      grid.querySelectorAll(".specimen").forEach(card => {
+        const on = category === "All" || card.dataset.category === category;
+        card.hidden = !on;
+        if (on) shown += 1;
+      });
+      empty.hidden = shown !== 0;
+      filters.querySelectorAll("button").forEach(button => {
+        button.setAttribute("aria-pressed", button.dataset.category === category ? "true" : "false");
+      });
+    }
+
+    fetch("types.json")
+      .then(r => r.json())
+      .then(types => {
+        const categories = ["All", ...new Set(types.map(type => type.category))];
+        categories.forEach(category => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.dataset.category = category;
+          button.textContent = category;
+          button.setAttribute("aria-pressed", category === "All" ? "true" : "false");
+          button.addEventListener("click", () => applyFilter(category));
+          filters.appendChild(button);
+        });
+
+        types.forEach(type => {
+          const card = document.createElement("article");
+          card.className = "specimen";
+          card.dataset.category = type.category;
+          card.innerHTML =
+            '<img src="img/' + type.id + '.jpg" alt="' + esc(type.name) + ', a ' + esc(type.category.toLowerCase()) + ' specimen" loading="lazy">' +
+            '<div class="meta">' +
+              '<span class="num">' + esc(type.id.slice(0, 2)) + '</span>' +
+              '<span class="cat">' + esc(type.category) + ' · ' + esc(bristol(type.bristol)) + '</span>' +
+              '<h2>' + esc(type.name) + '</h2>' +
+              '<p class="summary">' + esc(type.summary) + '</p>' +
+              '<p class="note">' + esc(type.note) + '</p>' +
+            '</div>';
+          grid.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>

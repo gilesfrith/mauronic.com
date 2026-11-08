@@ -30,17 +30,24 @@
       text-decoration: none;
     }
     .cta:hover { background: var(--yellow); }
+    .ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
+    .ctas .cta { margin-top: 0; }
+    .cta.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--gold); }
+    .cta.ghost:hover { background: var(--gold); color: #111; }
   </style>
 </head>
 <body>
-  <nav class="nav"><a href="./" aria-current="page">Home</a><a href="dad-jokes/">Dad Jokes</a></nav>
+  <nav class="nav"><a href="./" aria-current="page">Home</a><a href="dad-jokes/">Dad Jokes</a><a href="poop/">Poop</a></nav>
   <div class="stripes" aria-hidden="true"><span></span><span></span><span></span></div>
   <p class="brand">Mauronic.com</p>
   <h1>Coming Soon</h1>
   <figure class="photo">
     <img src="img/tony-mauro.jpg" alt="Tony Mauro, arms crossed, standing in front of a black van" width="1200" height="1600">
   </figure>
-  <a class="cta" href="dad-jokes/">Meanwhile, enjoy some dad jokes →</a>
+  <div class="ctas">
+    <a class="cta" href="dad-jokes/">Meanwhile, enjoy some dad jokes →</a>
+    <a class="cta ghost" href="poop/">Or consult the poop field guide →</a>
+  </div>
   <footer>&copy; <span id="y">2026</span> Mauronic</footer>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>

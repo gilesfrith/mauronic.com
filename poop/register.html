@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register a Type — Poop — Mauronic</title>
+  <meta name="description" content="File a newly observed poop. The form does not send anything anywhere.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <style>
+    .intro { color: var(--muted); max-width: 560px; margin: 14px auto 0; line-height: 1.5; }
+    .back {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .back:hover { color: var(--yellow); }
+    form, .receipt {
+      width: min(680px, 100%);
+      margin-top: 28px;
+      text-align: left;
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      background: #17171b;
+      padding: 22px 20px 26px;
+    }
+    fieldset { border: 0; margin: 0 0 22px; padding: 0; }
+    legend {
+      font-family: "Anton", Impact, sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    label { display: block; font-weight: 600; margin: 14px 0 6px; }
+    .hint { display: block; font-weight: 400; color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1.5px solid #3a3428;
+      background: #0d0d0f;
+      color: var(--ink);
+      font: inherit;
+    }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+    textarea { min-height: 110px; resize: vertical; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .check { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; font-weight: 600; line-height: 1.4; }
+    .check input { width: auto; margin-top: 3px; }
+    .file { padding: 8px 0; border: 0; background: transparent; }
+    .preview {
+      display: none;
+      margin-top: 12px;
+      width: min(280px, 100%);
+      border-radius: 8px;
+      border: 2px solid var(--gold);
+    }
+    button[type="submit"] {
+      margin-top: 18px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #111;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { background: var(--yellow); }
+    .receipt { display: none; }
+    .receipt h2 {
+      font-family: "Anton", Impact, sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 6vw, 3rem);
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+    .receipt p { margin-top: 12px; line-height: 1.5; }
+    .receipt .warn { color: var(--gold); font-weight: 600; }
+    dl { margin-top: 18px; display: grid; grid-template-columns: minmax(140px, 38%) 1fr; gap: 8px 14px; }
+    dt { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+    dd { margin: 0; }
+    .again {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1.5px solid var(--gold);
+      background: transparent;
+      color: var(--ink);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav"><a href="../">Home</a><a href="../dad-jokes/">Dad Jokes</a><a href="./">Poop</a></nav>
+  <div class="stripes" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p class="brand">Mauronic.com</p>
+  <h1>New Type</h1>
+  <p class="intro">Every field is a question a reasonable person would refuse. Answer them anyway. This form has no action, no endpoint, and no interest in keeping what you confess.</p>
+  <a class="back" href="./">← Back to the field guide</a>
+
+  <form id="specimen" autocomplete="off" novalidate>
+    <fieldset>
+      <legend>The specimen</legend>
+      <label for="name">Proposed common name <span class="hint">Precious Peas is taken. So is anything you would say at dinner.</span></label>
+      <input id="name" name="name" required maxlength="60" placeholder="The Tuesday Incident">
+
+      <div class="row">
+        <div>
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Choose, if you can bear to</option>
+            <option>Pellets</option>
+            <option>Logs</option>
+            <option>Soft</option>
+            <option>Liquids</option>
+            <option>Phenomena</option>
+            <option>Hazards</option>
+            <option>Artifacts</option>
+            <option>Events</option>
+            <option>Unclassifiable</option>
+          </select>
+        </div>
+        <div>
+          <label for="bristol">Bristol number</label>
+          <select id="bristol" name="bristol" required>
+            <option value="">1 is pebbles, 7 is a rumor</option>
+            <option>1 — separate hard lumps</option>
+            <option>2 — lumpy sausage</option>
+            <option>3 — cracked sausage</option>
+            <option>4 — smooth snake, the ideal</option>
+            <option>5 — soft blobs</option>
+            <option>6 — fluffy mush</option>
+            <option>7 — liquid, no architecture</option>
+            <option>It refused the scale</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="color">Color, described honestly</label>
+          <select id="color" name="color" required>
+            <option value="">Pick the one you wish was not true</option>
+            <option>Milk chocolate</option>
+            <option>Dark chocolate</option>
+            <option>Mahogany</option>
+            <option>Tar</option>
+            <option>Mustard</option>
+            <option>Traffic-cone orange</option>
+            <option>Clay gray</option>
+            <option>Chalk</option>
+            <option>Green, and we should not discuss why</option>
+          </select>
+        </div>
+        <div>
+          <label for="length">Length, in inches <span class="hint">Round if you must. Do not round down out of modesty.</span></label>
+          <input id="length" name="length" type="number" min="0" max="36" step="0.25" required placeholder="0.00">
+        </div>
+      </div>
+
+      <label for="buoyancy">Did it sink, float, or negotiate?</label>
+      <select id="buoyancy" name="buoyancy" required>
+        <option value="">The water remembers</option>
+        <option>Sank like it had an appointment</option>
+        <option>Hovered, undecided</option>
+        <option>Floated and made eye contact</option>
+        <option>Left no water to judge it</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>The aftermath</legend>
+      <div class="row">
+        <div>
+          <label for="wipes">Wipe count <span class="hint">The real number.</span></label>
+          <input id="wipes" name="wipes" type="number" min="0" max="99" required placeholder="0">
+        </div>
+        <div>
+          <label for="minutes">Minutes on the throne</label>
+          <input id="minutes" name="minutes" type="number" min="0" max="180" required placeholder="0">
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="pain">Pain, 0 to 10 <span class="hint">0 is polite. 10 is a religious experience.</span></label>
+          <input id="pain" name="pain" type="range" min="0" max="10" value="3" required>
+        </div>
+        <div>
+          <label for="odor">Odor, 1 to 10 <span class="hint">1 is a secret. 10 evacuates the county.</span></label>
+          <input id="odor" name="odor" type="range" min="1" max="10" value="5" required>
+        </div>
+      </div>
+
+      <label for="splash">Splash casualty radius</label>
+      <select id="splash" name="splash" required>
+        <option value="">Be brave</option>
+        <option>None. A gentleman.</option>
+        <option>The rim</option>
+        <option>The calves</option>
+        <option>The baseboards</option>
+        <option>A witness</option>
+      </select>
+
+      <label for="shower">Was a shower required?</label>
+      <select id="shower" name="shower" required>
+        <option value="">Choose</option>
+        <option>No</option>
+        <option>Immediately</option>
+        <option>The clothes came too</option>
+        <option>The room is still closed</option>
+      </select>
+
+      <label for="corn">Status of the corn</label>
+      <select id="corn" name="corn" required>
+        <option value="">This one hurts</option>
+        <option>Corn was not invited</option>
+        <option>I won</option>
+        <option>The corn won</option>
+        <option>I cannot discuss the corn</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>The confession</legend>
+      <label for="meal">Last meal you are willing to name <span class="hint">It already knows. This is for you.</span></label>
+      <input id="meal" name="meal" required maxlength="120" placeholder="Two tacos and a decision">
+
+      <label for="looked">Did you look back?</label>
+      <select id="looked" name="looked" required>
+        <option value="">Everyone looks back</option>
+        <option>Yes, obviously</option>
+        <option>No, and I am lying</option>
+        <option>I looked back twice</option>
+      </select>
+
+      <label for="witnesses">Witnesses</label>
+      <select id="witnesses" name="witnesses" required>
+        <option value="">Who else has to live with this</option>
+        <option>None</option>
+        <option>The dog</option>
+        <option>A houseguest</option>
+        <option>A coworker, still on the call</option>
+        <option>God</option>
+      </select>
+
+      <label for="photo">Photograph of the specimen <span class="hint">Stays in this browser. We will not take it from you, even if you ask.</span></label>
+      <input id="photo" name="photo" class="file" type="file" accept="image/*">
+      <img id="preview" class="preview" alt="">
+
+      <label for="notes">Field notes you will regret typing</label>
+      <textarea id="notes" name="notes" required maxlength="600" placeholder="Texture, timing, the sound, the thoughts you had at the worst moment."></textarea>
+
+      <label class="check">
+        <input id="anyway" name="anyway" type="checkbox" required>
+        <span>I understand this form goes nowhere, and I answered it anyway.</span>
+      </label>
+    </fieldset>
+
+    <button type="submit">File the specimen</button>
+  </form>
+
+  <section class="receipt" id="receipt" hidden>
+    <h2>Not filed.</h2>
+    <p class="warn">Nothing was sent. There is no server on the other end of this. The bowl already knew.</p>
+    <p id="blurb"></p>
+    <img id="receipt-photo" class="preview" alt="">
+    <dl id="facts"></dl>
+    <button type="button" class="again" id="again">Answer even worse questions</button>
+  </section>
+
+  <footer>&copy; <span id="y">2026</span> Mauronic</footer>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const form = document.getElementById("specimen");
+    const preview = document.getElementById("preview");
+    const receipt = document.getElementById("receipt");
+    const receiptPhoto = document.getElementById("receipt-photo");
+    let photoUrl = "";
+
+    document.getElementById("photo").addEventListener("change", event => {
+      if (photoUrl) URL.revokeObjectURL(photoUrl);
+      const file = event.target.files && event.target.files[0];
+      if (!file) {
+        preview.style.display = "none";
+        preview.removeAttribute("src");
+        photoUrl = "";
+        return;
+      }
+      photoUrl = URL.createObjectURL(file);
+      preview.src = photoUrl;
+      preview.alt = "Local preview of " + file.name + ". This image has not been uploaded.";
+      preview.style.display = "block";
+    });
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const name = data.get("name");
+      document.getElementById("blurb").textContent =
+        name + " has been observed, described, and then immediately forgotten by every machine involved.";
+      const facts = document.getElementById("facts");
+      facts.replaceChildren();
+      const rows = [
+        ["Category", data.get("category")],
+        ["Bristol", data.get("bristol")],
+        ["Color", data.get("color")],
+        ["Length", data.get("length") + " in"],
+        ["Buoyancy", data.get("buoyancy")],
+        ["Wipes", data.get("wipes")],
+        ["Minutes", data.get("minutes")],
+        ["Pain", data.get("pain") + " / 10"],
+        ["Odor", data.get("odor") + " / 10"],
+        ["Splash", data.get("splash")],
+        ["Shower", data.get("shower")],
+        ["Corn", data.get("corn")],
+        ["Last meal", data.get("meal")],
+        ["Looked back", data.get("looked")],
+        ["Witnesses", data.get("witnesses")],
+        ["Notes", data.get("notes")]
+      ];
+      rows.forEach(([term, detail]) => {
+        const dt = document.createElement("dt");
+        dt.textContent = term;
+        const dd = document.createElement("dd");
+        dd.textContent = detail;
+        facts.append(dt, dd);
+      });
+      if (photoUrl) {
+        receiptPhoto.src = photoUrl;
+        receiptPhoto.alt = "The photo you attached. It never left this page.";
+        receiptPhoto.style.display = "block";
+      } else {
+        receiptPhoto.style.display = "none";
+        receiptPhoto.removeAttribute("src");
+      }
+      form.hidden = true;
+      receipt.hidden = false;
+      receipt.style.display = "block";
+      receipt.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    document.getElementById("again").addEventListener("click", () => {
+      form.reset();
+      form.hidden = false;
+      receipt.hidden = true;
+      receipt.style.display = "none";
+      preview.style.display = "none";
+      preview.removeAttribute("src");
+      if (photoUrl) URL.revokeObjectURL(photoUrl);
+      photoUrl = "";
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.getElementById("name").focus();
+    });
+  </script>
+</body>
+</html>
