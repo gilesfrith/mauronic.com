@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beatings — Mauronic</title>
+  <meta name="description" content="Six consulting beatings. Same face. Different bruises. All earned.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <style>
+    .intro { color: var(--muted); max-width: 540px; margin: 14px auto 0; line-height: 1.5; }
+    .grid {
+      width: min(1100px, 100%);
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #17171b;
+      text-align: left;
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: #0d0d0f;
+    }
+    .meta { padding: 16px 16px 18px; }
+    .who {
+      font-family: "Anton", Impact, sans-serif;
+      font-weight: 400;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .quote {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      font-style: italic;
+    }
+    .quote::before { content: "“"; }
+    .quote::after { content: "”"; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="../">Home</a>
+    <a href="../dad-jokes/">Dad Jokes</a>
+    <a href="../poop/">Poop</a>
+    <a href="./" aria-current="page">Beatings</a>
+  </nav>
+  <div class="stripes" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p class="brand">Mauronic.com</p>
+  <h1>Beatings</h1>
+  <p class="intro">Consulting leaves marks. Same face. Six bruises. Take your pick.</p>
+  <main class="grid">
+    <article class="card">
+      <img src="img/client-vp.jpg" alt="Client VP black eye with a middle-finger shaped bruise" width="768" height="1024" loading="lazy">
+      <div class="meta">
+        <h2 class="who">Client VP</h2>
+        <p class="quote">Where is my salute?</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/client-architect.jpg" alt="Client Architect black eye with bloodshot hangover look and wine glass" width="768" height="1024" loading="lazy">
+      <div class="meta">
+        <h2 class="who">Client Architect</h2>
+        <p class="quote">What is PXM?</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/client-sr-director.jpg" alt="Client Sr. Director of Engineering with a severe black eye" width="768" height="1024" loading="lazy">
+      <div class="meta">
+        <h2 class="who">Client Sr. Director of Engineering</h2>
+        <p class="quote">How much money have I spent on that?</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/vmo.jpg" alt="VMO squeezing a dollar bill into her cheek" width="768" height="1024" loading="lazy">
+      <div class="meta">
+        <h2 class="who">VMO</h2>
+        <p class="quote">I need you to cut that price in half</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/son.jpg" alt="Mom looking guilty and bruised after a long road trip" width="768" height="1024" loading="lazy">
+      <div class="meta">
+        <h2 class="who">4 year old son</h2>
+        <p class="quote">Mom, you have been on the road for 10 weeks… do you love your client more than me?</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/work-leadership.jpg" alt="Work leadership double exposure with two black eyes" width="768" height="1024" loading="lazy">
+      <div class="meta">
+        <h2 class="who">Work leadership</h2>
+        <p class="quote">I need you to figure out how to double that</p>
+      </div>
+    </article>
+  </main>
+  <footer>&copy; <span id="y">2026</span> Mauronic</footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
